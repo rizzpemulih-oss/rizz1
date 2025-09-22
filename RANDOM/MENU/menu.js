@@ -2,182 +2,192 @@ const fs = require("fs")
 const chalk = require('chalk')
 
 global.menunya = (prefix) => {
-	let num = 1;
-	return `*[ I N F O - U S E R ]*
+	return `╭───「 *INFO PENGGUNA* 」───
+│ 
+│ *Nomor:* @${m.sender.split("@")[0]}
+│ 
+├───「 *🤖 Artificial Intelligence* 」───
+│ 
+│ ❯ ${prefix}ai
+│ ❯ ${prefix}deepseek
+│ ❯ ${prefix}gemini
+│ 
+├───「 *⏳ DOWNLOAD* 」───
+│ 
+│ ❯ ${prefix}capcut
+│ ❯ ${prefix}douyin
+│ ❯ ${prefix}facebook
+│ ❯ ${prefix}instagram
+│ ❯ ${prefix}pindl
+│ ❯ ${prefix}poopdl
+│ ❯ ${prefix}spotify
+│ ❯ ${prefix}threads
+│ ❯ ${prefix}tiktok
+│ ❯ ${prefix}tiktokslide
+│ ❯ ${prefix}videy
+│ ❯ ${prefix}ytmp3
+│ ❯ ${prefix}ytmp4
+│ 
+├───「 *👥 GRUP* 」───
+│ 
+│ ❯ ${prefix}antilink
+│ ❯ ${prefix}antilink2
+│ ❯ ${prefix}antiwame
+│ ❯ ${prefix}antiwame2
+│ ❯ ${prefix}welcome
+│ ❯ ${prefix}left
+│ ❯ ${prefix}delete
+│ ❯ ${prefix}linkgc
+│ ❯ ${prefix}open
+│ ❯ ${prefix}close
+│ ❯ ${prefix}group open
+│ ❯ ${prefix}group close
+│ ❯ ${prefix}pinchat
+│ ❯ ${prefix}unpin
+│ ❯ ${prefix}kick
+│ ❯ ${prefix}promote
+│ ❯ ${prefix}demote
+│ ❯ ${prefix}hidetag
+│ ❯ ${prefix}totag
+│ ❯ ${prefix}autogc
+│ ❯ ${prefix}autogc status
+│ ❯ ${prefix}autogc off
+│ 
+├───「 *❔ LAINNYA* 」───
+│ 
+│ ❯ ${prefix}owner
+│ ❯ ${prefix}speed
+│ ❯ ${prefix}ping
+│ ❯ ${prefix}script
+│ ❯ ${prefix}afk
+│ ❯ ${prefix}cekpremium
+│ 
+├───「 *👑 OWNER* 」───
+│ 
+│ ❯ ${prefix}addplugins
+│ ❯ ${prefix}delplugins
+│ ❯ ${prefix}getplugins
+│ ❯ ${prefix}listplugins
+│ ❯ ${prefix}saveplugins
+│ ❯ ${prefix}join
+│ ❯ ${prefix}addcase
+│ ❯ ${prefix}delcase
+│ ❯ ${prefix}listcase
+│ ❯ ${prefix}getcase
+│ ❯ ${prefix}addsewa
+│ ❯ ${prefix}delsewa
+│ ❯ ${prefix}listsewa
+│ ❯ ${prefix}addprem
+│ ❯ ${prefix}delprem
+│ ❯ ${prefix}listpremium
+│ 
+├───「 *🎮 GAME RPG* 」───
+│ 
+│ ❯ ${prefix}inventory
+│ ❯ ${prefix}mining
+│ ❯ ${prefix}buy 
+│ ❯ ${prefix}sell
+│ ❯ ${prefix}heal
+│ ❯ ${prefix}hunt
+│ ❯ ${prefix}adventure
+│ ❯ ${prefix}luckyday
+│ ❯ ${prefix}killslime
+│ ❯ ${prefix}killgoblin
+│ ❯ ${prefix}killdevil
+│ ❯ ${prefix}killbehemoth
+│ ❯ ${prefix}killdemon
+│ ❯ ${prefix}killdemonking
+│ ❯ ${prefix}joinrpg
+│ ❯ ${prefix}sellikan
+│ ❯ ${prefix}sellbesi
+│ ❯ ${prefix}sellemas
+│ ❯ ${prefix}jelajah
+│ ❯ ${prefix}mancing
+│ ❯ ${prefix}jualikan
+│ ❯ ${prefix}jualcoal
+│ ❯ ${prefix}lebur
+│ ❯ ${prefix}jualstone
+│ ❯ ${prefix}jualingot
+│ ❯ ${prefix}jualkayu
+│ ❯ ${prefix}nebang
+│ ❯ ${prefix}goplanet
+│ ❯ ${prefix}jualbahankimia
+│ 
+├───「 *🎰 SALDO RPG* 」───
+│ 
+│ ❯ ${prefix}topglobal
+│ ❯ ${prefix}toplocal
+│ ❯ ${prefix}buylimit
+│ ❯ ${prefix}buyglimit
+│ ❯ ${prefix}transfer
+│ ❯ ${prefix}limit
+│ ❯ ${prefix}balance
+│ 
+├───「 *🛒 TOKO* 」───
+│ 
+│ ❯ ${prefix}list
+│ ❯ ${prefix}addlist
+│ ❯ ${prefix}updatelist
+│ ❯ ${prefix}dellist
+│ ❯ ${prefix}jeda
+│ ❯ ${prefix}tambah
+│ ❯ ${prefix}kurang
+│ ❯ ${prefix}kali
+│ ❯ ${prefix}bagi
+│ ❯ ${prefix}setproses
+│ ❯ ${prefix}changeproses
+│ ❯ ${prefix}delsetproses
+│ ❯ ${prefix}setdone
+│ ❯ ${prefix}changedone
+│ ❯ ${prefix}delsetdone
+│ ❯ ${prefix}proses
+│ ❯ ${prefix}done
+│ ❯ ${prefix}setwelcome
+│ ❯ ${prefix}changewelcome
+│ ❯ ${prefix}delsetwelcome
+│ ❯ ${prefix}setleft
+│ ❯ ${prefix}changeleft
+│ ❯ ${prefix}delsetleft
+│ 
+├───「 *🔍 PENCARIAN* 」───
+│ 
+│ ❯ ${prefix}play
+│ ❯ ${prefix}kodepos
+│ 
+├───「 *👤 STALKER* 」───
+│ 
+│ ❯ ${prefix}ffstalk
+│ ❯ ${prefix}igstalk
+│ ❯ ${prefix}stalktele
+│ ❯ ${prefix}stalkchtele
+│ ❯ ${prefix}wastalk
+│ 
+├───「 *❓ STICKER* 」───
+│ 
+│ ❯ ${prefix}brat
+│ ❯ ${prefix}bratvideo
+│ ❯ ${prefix}sticker
+│ ❯ ${prefix}smeme
+│ ❯ ${prefix}toimg
+│ 
+├───「 *🌐 TOOLS* 」───
+│ 
+│ ❯ ${prefix}remini
+│ ❯ ${prefix}remini2
+│ ❯ ${prefix}removebg
+│ ❯ ${prefix}safelinku
+│ ❯ ${prefix}shortlink
+│ ❯ ${prefix}ssweb
+│ ❯ ${prefix}tourl
+│ ❯ ${prefix}rvo
+│ ❯ ${prefix}tohitam
+│ 
+╰─────────────
 
-*Number :* @${m.sender.split("@")[0]}
-
-*Artificial Intelligence 🤖*
-
-・${num++}.ai
-・${num++}.deepseek
-・${num++}.gemini
-
-*DOWNLOADER ⏳*
-
-・${num++}.capcut
-・${num++}.douyin
-・${num++}.facebook
-・${num++}.instagram
-・${num++}.pindl
-・${num++}.poopdl
-・${num++}.spotify
-・${num++}.threads
-・${num++}.tiktok
-・${num++}.tiktokslide
-・${num++}.videy
-・${num++}.ytmp3
-・${num++}.ytmp4
-
-*GROUP 👥*
-
-・${num++}.antilink
-・${num++}.antilink2
-・${num++}.antiwame
-・${num++}.antiwame2
-・${num++}.welcome
-・${num++}.left
-・${num++}.delete
-・${num++}.linkgc
-・${num++}.open
-・${num++}.close
-・${num++}.group open
-・${num++}.group close
-・${num++}.pinchat
-・${num++}.unpin
-・${num++}.kick
-・${num++}.promote
-・${num++}.demote
-・${num++}.hidetag
-・${num++}.totag
-・${num++}.autogc
-・${num++}.autogc status
-・${num++}.autogc off
-
-*OTHER ❔*
-
-・${num++}.owner
-・${num++}.speed
-・${num++}.ping
-・${num++}.script
-・${num++}.afk
-・${num++}.cekpremium
-
-*OWNER 👤*
-
-・${num++}.addplugins
-・${num++}.delplugins
-・${num++}.getplugins
-・${num++}.listplugins
-・${num++}.saveplugins
-・${num++}.join
-・${num++}.addcase
-・${num++}.delcase
-・${num++}.listcase
-・${num++}.getcase
-・${num++}.addsewa
-・${num++}.delsewa
-・${num++}.listsewa
-・${num++}.addprem
-・${num++}.delprem
-・${num++}.listpremium
-
-*RPG GAMES 🎮*
-
-・${num++}.inventory
-・${num++}.mining
-・${num++}.buy 
-・${num++}.sell
-・${num++}.heal
-・${num++}.hunt
-・${num++}.adventure
-・${num++}.luckyday
-・${num++}.killslime
-・${num++}.killgoblin
-・${num++}.killdevil
-・${num++}.killbehemoth
-・${num++}.killdemon
-・${num++}.killdemonking
-・${num++}.joinrpg
-・${num++}.sellikan
-・${num++}.sellbesi
-・${num++}.sellemas
-・${num++}.jelajah
-・${num++}.mancing
-・${num++}.jualikan
-・${num++}.jualcoal
-・${num++}.lebur
-・${num++}.jualstone
-・${num++}.jualingot
-・${num++}.jualkayu
-・${num++}.nebang
-・${num++}.goplanet
-・${num++}.jualbahankimia
-
-*RPG BALANCE 🎰*
-
-・${num++}.topglobal
-・${num++}.toplocal
-・${num++}.buylimit
-・${num++}.buyglimit
-・${num++}.transfer
-・${num++}.limit
-・${num++}.balance
-
-*STORE 🛒*
-
-・${num++}.list
-・${num++}.addlist
-・${num++}.updatelist
-・${num++}.dellist
-・${num++}.jeda
-・${num++}.tambah
-・${num++}.kurang
-・${num++}.kali
-・${num++}.bagi
-・${num++}.setproses
-・${num++}.changeproses
-・${num++}.delsetproses
-・${num++}.setdone
-・${num++}.changedone
-・${num++}.delsetdone
-・${num++}.proses
-・${num++}.done
-・${num++}.setwelcome
-・${num++}.changewelcome
-・${num++}.delsetwelcome
-・${num++}.setleft
-・${num++}.changeleft
-・${num++}.delsetleft
-
-*SEARCHING 🔍*
-
-・${num++}.play
-・${num++}.kodepos
-
-*STALKER 👤*
-
-・${num++}.ffstalk
-・${num++}.igstalk
-・${num++}.wastalk
-
-*STICKER ❓*
-
-・${num++}.brat
-・${num++}.sticker
-・${num++}.smeme
-・${num++}.toimg
-
-*TOOLS 🌐*
-
-・${num++}.remini
-・${num++}.remini2
-・${num++}.removebg
-・${num++}.safelinku
-・${num++}.shortlink
-・${num++}.ssweb
-・${num++}.tourl
-・${num++}.rvo
+╭───「 *END MENU* 」───
+│ ✧ Gunakan fitur dengan bijak
+│ ✧ Jangan lakukan spam ya !
+╰─────────────
 `
 }
 
