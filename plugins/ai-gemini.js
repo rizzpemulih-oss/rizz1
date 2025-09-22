@@ -1,16 +1,19 @@
-const fetch = require('node-fetch')
+const fetch = require("node-fetch");
 
 let handler = async (m, { jerofc, text, reply, prefix, command }) => {
-	if (!text) return reply(`Example : ${prefix + command} Hello`)
-	let api = await fetch(`https://jerofc.my.id/api/gemini?text=${text}&apikey=${jerapi}`)
-	let res = await api.json();
-	try {
-		reply(res.data.message)
-	} catch (e) {
-		console.log(e)
-	}
-}
+  if (!text) return reply(`Example : ${prefix + command} Hello`);
+  let api = await fetch(
+    `https://jerofc.my.id/api/ai/gemini?prompt=${encodeURIComponent(text)}&apikey=${jerapi}`
+  );
+  if (!api.ok) throw await api.text();
+  let res = await api.json();
+  try {
+    reply(res.data.message);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-handler.command = ["gemini"]
+handler.command = ["gemini"];
 
-module.exports = handler
+module.exports = handler;

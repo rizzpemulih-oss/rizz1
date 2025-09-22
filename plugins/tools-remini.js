@@ -12,7 +12,7 @@ let handler = async (m, { jerofc, prefix, command, reply, quoted }) => {
     let buffer = await quoted.download();
     let upload = await UploadImg(buffer);
     let response = await axios.get(
-      `https://jerofc.my.id/api/tools/removebg?url=${upload}&apikey=${jerapi}`
+      `https://jerofc.my.id/api/tools/remini?url=${upload}&apikey=${jerapi}`
     );
     jerofc.sendMessage(
       m.chat,
@@ -32,6 +32,6 @@ let handler = async (m, { jerofc, prefix, command, reply, quoted }) => {
   }
 };
 
-handler.command = ["removebg", "snobg", "rmbg"];
+handler.command = ["remini", "hd", "hdr"];
 
 module.exports = handler;

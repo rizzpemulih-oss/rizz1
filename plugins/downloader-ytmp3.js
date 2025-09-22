@@ -9,7 +9,7 @@ let handler = async (m, { jerofc, args, reply, prefix, command, quoted }) => {
     );
   try {
     const response = await axios.get(
-      `https://jerofc.my.id/api/ytmp3?url=${args[0]}&apikey=${global.jerapi}`
+      `https://jerofc.my.id/api/download/ytmp3?url=${args[0]}&apikey=${global.jerapi}`
     );
     const result = response.data.data;
     jerofc.sendMessage(

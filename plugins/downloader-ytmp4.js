@@ -9,7 +9,7 @@ let handler = async (m, { jerofc, args, reply, prefix, command, quoted }) => {
     );
   try {
     const response = await axios.get(
-      `https://jerofc.my.id/api/ytmp4?url=${text}&apikey=${global.jerapi}`
+      `https://jerofc.my.id/api/download/ytmp4?url=${args[0]}&apikey=${global.jerapi}`
     );
     const result = response.data.data;
     jerofc.sendMessage(
@@ -18,16 +18,16 @@ let handler = async (m, { jerofc, args, reply, prefix, command, quoted }) => {
         document: {
           url: result.mp4,
         },
-        fileName: result.info.title + ".mp4",
+        fileName: result.title + ".mp4",
         mimetype: "video/mp4",
-        caption: result.info.title,
+        caption: result.title,
         ptt: false,
         contextInfo: {
           externalAdReply: {
-            title: result.info.title,
+            title: result.title,
             body: "YOUTUBE DOWNLOAD MP4",
             previewType: "PHOTO",
-            thumbnailUrl: result.info.thumbnail,
+            thumbnailUrl: result.thumbnail,
             mediaType: 1,
             renderLargerThumbnail: true,
             sourceUrl: args[0],

@@ -9,7 +9,7 @@ let handler = async (m, { jerofc, text, reply, prefix, command, quoted }) => {
     );
   try {
     let response = await axios.get(
-      `https://jerofc.my.id/api/fbdl?url=${text}&apikey=${global.jerapi}`
+      `https://jerofc.my.id/api/download/fbdl?url=${text}&apikey=${global.jerapi}`
     );
     let video = response.data.result;
     jerofc.sendMessage(

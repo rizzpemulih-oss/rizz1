@@ -9,7 +9,7 @@ let handler = async (m, { jerofc, text, reply, prefix, command, quoted }) => {
     );
   try {
     let response = await axios.get(
-      `https://jerofc.my.id/api/tiktokslide?url=${text}&apikey=${global.jerapi}`
+      `https://jerofc.my.id/api/download/tiktokslide?url=${text}&apikey=${global.jerapi}`
     );
     let data = response.data.data;
 
@@ -53,7 +53,6 @@ let handler = async (m, { jerofc, text, reply, prefix, command, quoted }) => {
             showAdAttribution: true,
             renderLargerThumbnail: true,
             title: data.author.nickname,
-            containsAutoReply: true,
             mediaType: 1,
             thumbnailUrl: cover,
             mediaUrl: `${text}`,
@@ -77,7 +76,7 @@ let handler = async (m, { jerofc, text, reply, prefix, command, quoted }) => {
         m.sender,
         {
           audio: {
-            url: response.data.music_info.play,
+            url: data.music_info.play,
           },
           mimetype: "audio/mpeg",
         },
@@ -91,7 +90,7 @@ let handler = async (m, { jerofc, text, reply, prefix, command, quoted }) => {
         m.chat,
         {
           audio: {
-            url: response.data.music_info.play,
+            url: data.music_info.play,
           },
           mimetype: "audio/mpeg",
         },
