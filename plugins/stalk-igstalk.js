@@ -9,27 +9,36 @@ let handler = async (m, { jerofc, text, reply, prefix, command }) => {
     const api = await fetch(
       `https://jerofc.my.id/api/stalk/igstalk?username=${text}&apikey=${jerapi}`
     );
-    const result = await api.json();
+    const data = await api.json();
     const {
-      nickname,
       username,
-      bio,
+      nickname,
+      biodata,
       followers,
       following,
-      profile,
+      totalPosts,
+      verified,
+      private,
+      busisness_account,
       profileUrl,
-    } = result.data;
+      profile_pic
+    } = data.result;
+
     let txt = "`[ INSTAGRAM STALK ]`\n\n";
     txt += `Nickname : ${nickname}\n`;
     txt += `Username : ${username}\n`;
-    txt += `Bio : ${bio}\n`;
+    txt += `Bio : ${biodata}\n`;
     txt += `Followers : ${followers}\n`;
     txt += `Following : ${following}\n`;
-    txt += `Profile : ${profile}`;
+    txt += `Total Posts : ${totalPosts}\n`;
+    txt += `Verified : ${verified ? '✅' : '❌'}\n`;
+    txt += `Private : ${private ? '✅' : '❌'}\n`;
+    txt += `Business Account : ${busisness_account ? '✅' : '❌'}\n`;
+    txt += `Profile : ${profileUrl}`;
     jerofc.sendMessage(
       m.chat,
       {
-        image: { url: profileUrl },
+        image: { url: profile_pic },
         caption: txt,
       },
       {
