@@ -19,7 +19,7 @@ global.menunya = (prefix) => {
 │ ❯ ${prefix}facebook
 │ ❯ ${prefix}instagram
 │ ❯ ${prefix}pindl
-│ ❯ ${prefix}poopdl
+│ ❯ ${prefix}soundcloud
 │ ❯ ${prefix}spotify
 │ ❯ ${prefix}threads
 │ ❯ ${prefix}tiktok
@@ -160,6 +160,7 @@ global.menunya = (prefix) => {
 │ ❯ ${prefix}igstalk
 │ ❯ ${prefix}stalktele
 │ ❯ ${prefix}stalkchtele
+│ ❯ ${prefix}stalktwit
 │ ❯ ${prefix}wastalk
 │ 
 ├───「 *❓ STICKER* 」───
