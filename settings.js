@@ -29,7 +29,8 @@ global.gcount = {
 };
 
 // SET
-global.onlygrub = true;
+global.onlygrub = false;
+
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
   fs.unwatchFile(file);
