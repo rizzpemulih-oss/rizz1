@@ -13,14 +13,14 @@ global.APIKeys = {
 
 global.jerapi = "YOUR_KEY"; // WAJIB ISI
 
-global.owner = ["6289529382858"]; //ganti nomor owner hp kalian
-global.namabot = "JER OFC";
-global.namaowner = "JER OFC";
+global.owner = ["6283192953573"]; //ganti nomor owner hp kalian
+global.namabot = "RizzX Bot";
+global.namaowner = "rizz gtg";
 global.sessionName = "session";
 global.pp_bot = fs.readFileSync("./image/menu.jpg");
 
-global.packname = "© JERONE-BOT"; //sticker wm ubah
-global.author = "Di Buat Oleh JER OFC"; //sticker wm ganti nama kalian
+global.packname = "rizz gtg bgt"; //sticker wm ubah
+global.author = "Di Buat Oleh RizzX Bot"; //sticker wm ganti nama kalian
 
 global.limitCount = 50;
 global.gcount = {
